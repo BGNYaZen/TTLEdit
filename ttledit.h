@@ -9,6 +9,8 @@
 
 #include <QGridLayout>
 
+#include <QProcess>
+
 class TTLEdit : public QWidget
 {
     Q_OBJECT
@@ -24,8 +26,15 @@ private:
 
     QTextEdit *log_ttl;
 
+    QProcess *proc_ttl;
+
 public:
     TTLEdit(QWidget *parent = nullptr);
     ~TTLEdit();
+
+private slots:
+    void getTTL();
+    void setTTL();
+    void resetTTL();
 };
 #endif // TTLEDIT_H
